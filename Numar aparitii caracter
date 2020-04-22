@@ -1,0 +1,30 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        int i,k;
+        k=0;
+        String name="This is  aString";
+
+        char[] chars = name.toCharArray();
+
+        char arr='i';
+
+        //scanner.Int
+        //CTRL click
+
+
+        for(i=0;i<chars.length;i++)
+        {
+            //if(chars[i]=='i')
+            if(chars[i]==arr)
+            {
+                k=k+1;
+            }
+        }
+        System.out.println("Nr. de i este de: " +k);
+
+    }
+}
