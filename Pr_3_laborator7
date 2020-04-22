@@ -1,0 +1,28 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        int n,k;
+        Scanner s = new Scanner(System.in);
+        System.out.println("Combinari de: ");
+        n=s.nextInt();
+
+        System.out.println("luate cate: ");
+        k=s.nextInt();
+
+        System.out.println("Rezultatul combinarii este: "+comb(n,k));
+        n=s.nextInt();
+    }
+
+    public static int comb(int n, int k)
+    {
+        if (n==k || k==0)
+            return 1;
+        else
+            return (comb(n-1,k)+comb(n-1,k-1));
+    }
+}
