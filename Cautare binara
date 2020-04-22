@@ -1,0 +1,40 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        int [] a={5, 9, 17, 23, 25, 45, 59, 63, 71, 89};    //vector
+
+        Main cb = new Main();    //am facut clasa de cautare
+
+        System.out.println(cb.search(a,0,a.length -1,25));
+        //afisez din vector pozitia elementului 25
+        //left incepe de la pozitia 0
+        //right incepe de la ultima pozitie -1
+        //pozitia elementului n pe care il doresc
+        System.out.println(cb.search(a,0,a.length -1,59));
+    }
+
+    private int search (int [] a, int left, int right, int n)
+    {
+        //aici practic urmaresc algoritmul din lucrarea 2
+        int middle=(left+right)/2;  //pozitie mijloc
+        if(left <= right)
+        {
+            if(a[middle]==n) {
+                return middle;
+            }
+
+
+            if(a[middle] > n)
+            {
+                return search(a,left,middle-1,n);
+            }
+            else {
+                return search(a, middle + 1, right, n);
+            }
+        }
+        return  -1;
+    }
+}
