@@ -1,0 +1,47 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // write your code here
+
+        Person obj= new Person();
+
+        //obj.setage(19);
+
+        System.out.println("Varsta: " + obj.getage());
+        System.out.println("Nume: " + obj.getname());
+
+    }
+}
+
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+
+package com.company;
+
+public class Person {
+    private int age;
+    private String name;
+
+    public int getage()
+    {
+        return age;
+    }
+
+    public String getname()
+    {
+        return name;
+    }
+
+
+
+    Person(){
+        age=19;
+        name="JustaName";
+
+    }
+
+}
