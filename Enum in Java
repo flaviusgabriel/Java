@@ -1,0 +1,42 @@
+package com.company;
+
+enum Days
+{
+    SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THRSDAY,FRIDAY,SATURDAY;
+}
+
+public class Main {
+
+    Days day;
+
+    //Constructor
+    public Main(Days day){
+        this.day=day;
+    }
+
+    public void dayIsLike()
+    {
+        switch (day)
+        {
+            case MONDAY:
+                System.out.println("Mondays are bad");
+                break;
+            case FRIDAY:
+                System.out.println("Fridays are better");
+                break;
+            case SATURDAY:
+            case SUNDAY:
+                System.out.println("Weekend is the best");
+                break;
+            default:
+                System.out.println("Midweek days are so and so");
+        }
+    }
+
+    public static void main(String[] args) {
+	// write your code here
+        String c="MONDAY";
+        Main t1=new Main(Days.valueOf(c));
+        t1.dayIsLike();
+    }
+}
