@@ -1,0 +1,40 @@
+package com.company;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        int n;
+        int i;
+        Scanner s = new Scanner(System.in);
+        System.out.println("Please enter the length of the array: ");
+        n=s.nextInt();
+        int [] v=new int[n];
+        System.out.println("Please enter the elements of the array: ");
+        for(i=0;i<n;i++)
+            v[i]=s.nextInt();
+        shell_sort(v,n);
+        System.out.println(Arrays.toString(v));
+    }
+    public static int shell_sort(int []v, int n)
+    {
+        int i;
+        int j;
+        int k;
+        int aux;
+        for(i=n/2;i>0;i/=2)
+        {
+            for(j=i;j<n;j+=1)
+            {
+                aux=v[j];
+                for(k=j;k>=i && v[k-i]>aux;k-=i)
+                    v[k]=v[k-i];
+                v[k]=aux;
+            }
+        }
+        return 0;
+    }
+}
