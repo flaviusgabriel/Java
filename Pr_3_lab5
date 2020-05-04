@@ -1,0 +1,52 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        Abonat A = new Abonat("Dianne","1508  Marshville Road","914-728-9824",123);
+        System.out.println(A.name);
+        System.out.println(A.adress);
+        System.out.println(A.phone);
+        System.out.println(A.bill);
+        System.out.println("------------");
+        Abonat B = new Abonat("Mike","3636  Reserve St","613-473-7519",323);
+        System.out.println(B.name);
+        System.out.println(B.adress);
+        System.out.println(B.phone);
+        System.out.println(B.bill);
+        System.out.println("------------");
+        Abonat C = new Abonat("Muhamed","84  Thirsk Road","070 0088 9280",98);
+        System.out.println(C.name);
+        System.out.println(C.adress);
+        System.out.println(C.phone);
+        System.out.println(C.bill);
+        System.out.println("------------");
+        Abonat D = new Abonat("Marc","4345  Barrydowne Road","705-662-7532",111);
+        System.out.println(D.name);
+        System.out.println(D.adress);
+        System.out.println(D.phone);
+        System.out.println(D.bill);
+        System.out.println("------------");
+        int n=4;
+        int i;
+        int j;
+        int [] v={A.bill,B.bill,C.bill,D.bill};
+        for (i=0;i<n-1;i++)
+        {
+            for(j=i+1;j<n;j++)
+            {
+                if (v[i] < v[j]) {
+                    int aux = v[i];
+                    v[i] = v[j];
+                    v[j] = aux;
+                }
+            }
+        }
+        for(i=0;i<n;i++)
+            System.out.println(v[i]);
+        System.out.println("--------------");
+        for(i=0;i<3;i++)
+            System.out.println(v[i]);
+    }
+}
