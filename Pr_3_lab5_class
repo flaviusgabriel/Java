@@ -1,0 +1,66 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+class Sortbybill implements Comparator<Client>
+{
+    // Used for sorting in ascending order of
+    // roll number
+    public int compare(Client a, Client b)
+    {
+        return b.bill - a.bill;
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        ArrayList<Client> ar=new ArrayList<Client>();
+        ar.add(new Client(123, "Dianne", "1508  Marshville Road"));
+        ar.add(new Client(323, "Mike", "3636  Reserve St"));
+        ar.add(new Client(98, "Muhamed", "84  Thirsk Road"));
+        ar.add(new Client(111, "John", "4345  Barrydowne Road"));
+        ar.add(new Client(200, "Blake", "4551  Flanigan Oaks Drive"));
+        ar.add(new Client(197, "Charles", "81  Ash Lane"));
+
+        Collections.sort(ar,new Sortbybill());
+
+        System.out.println("\nSorted by bill");
+        for (int i=0; i<ar.size(); i++)
+            System.out.println(ar.get(i));
+        System.out.println("-------------------");
+        for(int i=0;i<3;i++)
+            System.out.println(ar.get(i));
+
+    }
+}
+
+
+
+/*---------------------------------------------------------------Class---------------------------------------------------------------*\
+
+
+
+package com.company;
+
+public class Client {
+    int bill;
+    String name, address;
+
+    public Client(int bill,String name, String address)
+    {
+        this.bill=bill;
+        this.name=name;
+        this.address=address;
+    }
+
+    public String toString()
+    {
+        return this.bill + " " + this.name +
+                " " + this.address;
+    }
+}
+
