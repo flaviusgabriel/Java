@@ -1,0 +1,51 @@
+package com.company;
+import java.io.BufferedReader;
+import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+
+public class Main {
+
+    public static void main(String[] args) throws FileNotFoundException {
+        // write your code here
+        int s=0;
+        File file = new File("E:\\Flavius_S\\Intelij\\File.txt");
+        //Scanner scan = new Scanner(file);
+        BufferedReader br = new BufferedReader(new FileReader(file));
+
+        String st;
+
+        Integer sumTextNumbers=0;
+
+        try {
+            while((st=br.readLine())!=null){
+                sumTextNumbers+=Integer.parseInt(st);
+                System.out.println(st);
+            }
+
+            System.out.println("Sum is: "+sumTextNumbers);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+        /*while(scan.hasNextLine()) {
+            System.out.println(scan.nextLine());
+        }*/
+        float ma;
+        try {
+
+            FileReader fr =new FileReader(file);
+            LineNumberReader lnr = new LineNumberReader(fr);
+            lnr.skip(Long.MAX_VALUE);
+            System.out.println("Nr. of lines: "+lnr.getLineNumber());
+            ma=sumTextNumbers/(lnr.getLineNumber()+1);
+            System.out.println("Average is: "+ma);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+}
