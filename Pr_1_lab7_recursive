@@ -1,0 +1,35 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        int n;
+        int i;
+        Scanner s = new Scanner(System.in);
+        System.out.println("Array length: ");
+        n=s.nextInt();
+        int [] v = new int[n];
+        System.out.println("Enter the elements: ");
+        for(i=0;i<n;i++)
+        {
+            v[i] = s.nextInt();
+        }
+        //System.out.println(Arrays.toString(v));
+        //int [] v= {2,1,1,4};
+
+        int sum=Sum(v,n);
+        System.out.println(sum);
+        //Sum(n,v);
+    }
+
+    public static int Sum(int []v, int n)
+    {
+        if(n<=0)
+            return 0;
+        else
+            return Sum(v,n-1)+v[n-1];
+    }
+}
