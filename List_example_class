@@ -1,0 +1,121 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.stream.Collectors;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        Stdent student1 = new Stdent("name1","adress1",null,null);
+        Stdent student2 = new Stdent("name2","adress2",null,null);
+        Stdent student3 = new Stdent("name3","adress3",null,null);
+        Stdent student4 = new Stdent("name4","adress4",null,null);
+        Stdent student5 = new Stdent("name5","adress5",null,null);
+
+        student1.setNext(student2);
+        student1.setHead(student1);
+
+        student2.setNext(student3);
+        student2.setHead(student1);
+
+        student3.setNext(student4);
+        student3.setHead(student1);
+
+        student4.setNext(student5);
+        student4.setHead(student1);
+
+        student5.setHead(student1);
+
+        //printInfos(student4.getHead());
+
+        List<Stdent> list = new ArrayList<>();
+        list.add(student1);
+        list.add(student2);
+        list.add(student3);
+        list.add(student4);
+        list.add(student5);
+
+        list.stream().filter(s->s.getName().equals("name1")).forEach(s-> System.out.println(s.getName()));
+
+        /*list.forEach(l->{
+            System.out.println("name: " + l.getName() + ",adress: " + l.getAdress());
+        });*/
+
+        Collections.sort(list, Comparator.comparing(Stdent::getName).reversed());
+
+        List<String>collect = list.stream()
+                .map(s->s.getName())
+                .collect(Collectors.toList());
+
+
+        list.forEach(l->{
+            System.out.println("name: " + l.getName() + ",adress: " + l.getAdress());
+        });
+        /*list.stream().sorted(Comparator.comparing(s->s.getName())).forEach(l->{
+            System.out.println("name: " + l.getName() + ",adress: " + l.getAdress());
+        });*/
+
+    }
+
+    public static void printInfos(Stdent student){
+        if (student != null) {
+            System.out.println("name: " + student.getName() + ",adress: " + student.getAdress());
+            printInfos(student.getNext());
+        }
+    }
+}
+
+/*CLASS Stdnt*/
+package com.company;
+
+public class Stdent {
+    private String name;
+    private String adress;
+
+    private Stdent head;
+    private Stdent next;
+
+    public Stdent(String name, String adress, Stdent head, Stdent next){
+        this.name=name;
+        this.adress=adress;
+        this.head=head;
+        this.next=next;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name=name;
+    }
+
+    public String getAdress(){
+        return adress;
+    }
+
+    public void setAdress(String adress){
+        this.adress=adress;
+    }
+
+    public Stdent getHead(){
+        return head;
+    }
+
+    public void setHead(Stdent head){
+        this.head=head;
+    }
+
+    public Stdent getNext(){
+        return next;
+    }
+
+    public void setNext(Stdent next){
+        this.next=next;
+    }
+}
