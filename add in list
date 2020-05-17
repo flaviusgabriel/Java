@@ -1,0 +1,23 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        ArrayList list = new ArrayList();
+        list.add("dddd");
+        list.add("aaaa");
+        list.add("zzzz");
+        list.add("eeee");
+        list.add("mmmm");
+
+        System.out.println(list);
+
+        Collections.sort(list);
+
+        System.out.println(list);
+    }
+}
