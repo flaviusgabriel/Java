@@ -1,0 +1,30 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // write your code here
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("Alex");
+        list.add("Brian");
+        list.add("Charles");
+        list.add("Mark");
+        list.add("John");
+        list.add("Blake");
+
+        System.out.println(list);
+
+        int v[] = {1,4,5};
+
+        for (int i = 0; i < v.length; i++) {
+            list.remove(v[i]-i);
+        }
+
+        System.out.println(list);
+
+    }
+}
