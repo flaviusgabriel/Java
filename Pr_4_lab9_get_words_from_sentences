@@ -1,0 +1,66 @@
+package com.company;
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        Scanner scan = new Scanner(System.in);
+        String s1;
+        System.out.println("String1:");
+        s1=scan.nextLine();
+        System.out.println("String2:");
+        String s2;
+        s2=scan.nextLine();
+
+        /*System.out.println("String 1: " + s1);
+        System.out.println("String 2: " + s2);
+
+        String strar[]=s1.split(" ");
+        ArrayList<String> arr = new ArrayList<String>(Arrays.asList(strar));
+        System.out.println("Words from first string: ");
+        for(int i=0;i<arr.size();i++){
+            System.out.println(arr.get(i));
+        }
+
+        String strar2[]=s2.split(" ");
+        ArrayList<String> arr2 = new ArrayList<String>(Arrays.asList(strar2));
+        System.out.println("Words from second string: ");
+        for(int j=0;j<arr2.size();j++){
+            System.out.println(arr2.get(j));
+        }*/
+
+        //String s1 = "A Test Sentence";
+        ArrayList<String> a = new ArrayList<String>();
+        a = getRawWords(s1);
+        System.out.println(a);
+
+        ArrayList<String> b = new ArrayList<String>();
+        b = getRawWords(s2);
+        System.out.println(b);
+
+        a.retainAll(b);
+        System.out.println(a);
+
+        int k=0;
+        for(int j=0;j<a.size();j++)
+        {
+            k+=1;
+        }
+        System.out.println("In the list there is "+k +" common elements");
+
+    }
+
+    public static ArrayList<String> getRawWords(String s1)
+    {
+        String[]  s2 = s1.split(" ");
+        ArrayList<String> words = new ArrayList<String>();
+
+        for(int x =0; x<= s2.length-1;x++)
+        {
+            words.add(s2[x]);
+        }
+        return words;
+    }
+}
