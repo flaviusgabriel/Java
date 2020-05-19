@@ -1,0 +1,19 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        int n=6;
+        int k=2;
+        System.out.println(Josephus(n,k));
+
+    }
+
+    static int Josephus(int n, int k){
+        if(n==1)
+            return 1;
+        else
+            return (Josephus(n-1,k)+k-1)%n+1;
+    }
+}
