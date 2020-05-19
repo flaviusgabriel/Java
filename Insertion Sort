@@ -1,0 +1,34 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        int v[]={4,3,2,10,12,1,5,6};
+        System.out.println("Array before Inseration Sort: ");
+        for(int i=0;i<v.length;i++)
+            System.out.println(v[i]);
+
+        inserationSort(v);
+
+        System.out.println("Array after Inseration Sort");
+        for(int i=0;i<v.length;i++)
+        {
+            System.out.println(v[i]);
+        }
+    }
+
+    public static void inserationSort(int v[]){
+        int n = v.length;
+        for (int i = 1; i < n; ++i) {
+            int key = v[i];
+            int j = i - 1;
+            while (j >= 0 && v[j] > key)
+            {
+                v[j + 1] = v[j];
+                j = j - 1;
+            }
+            v[j + 1] = key;
+        }
+    }
+}
